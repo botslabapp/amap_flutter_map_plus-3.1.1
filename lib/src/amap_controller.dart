@@ -139,4 +139,9 @@ class AMapController {
   Future<void> clearDisk() {
     return _methodChannel.clearDisk(mapId: mapId);
   }
+
+  ///获取地图当前比例尺：1像素点对应的距离长度（米）
+  Future<double?> getScalePerPixel() {
+    return _methodChannel.getScalePerPixel(mapId: mapId);
+  }
 }

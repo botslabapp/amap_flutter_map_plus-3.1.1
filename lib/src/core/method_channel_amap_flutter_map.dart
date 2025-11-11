@@ -270,4 +270,10 @@ class MethodChannelAMapFlutterMap implements AMapFlutterPlatform {
   }) {
     return channel(mapId).invokeMethod<void>('map#clearDisk');
   }
+
+  Future<double?> getScalePerPixel({
+    required int mapId,
+  }) {
+    return channel(mapId).invokeMethod<double?>('map#getScalePerPixel');
+  }
 }

@@ -145,6 +145,13 @@ public class MapController
                     result.success(null);
                 }
                 break;
+            case Const.METHOD_MAP_GET_SCALE_PER_PIXEL:
+                if (null != amap) {
+                    result.success(amap.getScalePerPixel());
+                } else {
+                    result.success(-1);
+                }
+                break;
             default:
                 LogUtil.w(CLASS_NAME, "onMethodCall not find methodId:" + call.method);
                 break;
