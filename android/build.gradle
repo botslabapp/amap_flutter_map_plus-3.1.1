@@ -4,36 +4,46 @@ version '1.0'
 buildscript {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.5.0'
+        classpath 'com.android.tools.build:gradle:8.2.2'
     }
 }
 
 rootProject.allprojects {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
 }
 
 apply plugin: 'com.android.library'
 
 android {
-    namespace 'com.amap.flutter.dmap'  // 添加 namespace
-    compileSdkVersion 31
+    namespace 'com.amap.flutter.dmap'
+    compileSdk 35
 
     defaultConfig {
-        minSdkVersion 16
+        minSdk 16
+        targetSdk 35
     }
+
     lintOptions {
         disable 'InvalidPackage'
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildFeatures {
+        buildConfig true
     }
 }
 
 dependencies {
     compileOnly 'com.amap.api:3dmap:8.1.0'
 }
-
