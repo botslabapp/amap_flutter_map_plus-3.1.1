@@ -107,6 +107,14 @@ class MethodChannelAMapFlutterMap implements AMapFlutterPlatform {
         creationParams: creationParams,
         creationParamsCodec: const StandardMessageCodec(),
       );
+    } else if (defaultTargetPlatform.name == 'ohos') {
+      return OhosView(
+        viewType: VIEW_TYPE,
+        onPlatformViewCreated: onPlatformViewCreated,
+        gestureRecognizers: gestureRecognizers,
+        creationParams: creationParams,
+        creationParamsCodec: const StandardMessageCodec(),
+      );
     }
     return Text('当前平台:$defaultTargetPlatform, 不支持使用高德地图插件');
   }
