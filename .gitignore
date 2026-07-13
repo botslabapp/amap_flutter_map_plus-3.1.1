@@ -123,3 +123,5 @@ app.*.symbols
 .fvm/
 .fvmrc
 .idea
+oh_modules
+.hvigor

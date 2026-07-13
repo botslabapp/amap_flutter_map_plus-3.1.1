@@ -1,0 +1,12 @@
+{
+  "name": "entry",
+  "version": "1.0.0",
+  "description": "Please describe the basic information.",
+  "main": "",
+  "author": "",
+  "license": "",
+  "dependencies": {
+    "amap_flutter_map_plus": "file:../har/amap_flutter_map_plus.har",
+    "@ohos/flutter_ohos": "har/flutter.har"
+  }
+}

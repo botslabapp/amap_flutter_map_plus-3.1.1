@@ -1,0 +1,48 @@
+{
+  "app": {
+    "signingConfigs": [
+      {
+        "name": "default",
+        "type": "HarmonyOS",
+        "material": {
+          "certpath": "/Users/qihoo/.ohos/config/default_ohos_3IDAkPGzEPQaJ1aXEb3yXt2sjlcmCqsG9RraPwBqx_w=.cer",
+          "keyAlias": "debugKey",
+          "keyPassword": "0000001BA0CA11F5C81B8540ACB81F574CC71410BA66866238C85192D0964C2929F71E76A99768B6184E6F",
+          "profile": "/Users/qihoo/.ohos/config/default_ohos_3IDAkPGzEPQaJ1aXEb3yXt2sjlcmCqsG9RraPwBqx_w=.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "/Users/qihoo/.ohos/config/default_ohos_3IDAkPGzEPQaJ1aXEb3yXt2sjlcmCqsG9RraPwBqx_w=.p12",
+          "storePassword": "0000001B0077A15F487B11D594932C7DD0194C54F30F4195331BDD55A3F568509C0663E658C99A802DF980"
+        }
+      }
+    ],
+    "products": [
+      {
+        "name": "default",
+        "signingConfig": "default",
+        "compatibleSdkVersion": "5.0.0(12)",
+        "runtimeOS": "HarmonyOS",
+        "buildOption": {
+          "strictMode": {
+            "caseSensitiveCheck": true,
+            "useNormalizedOHMUrl": true
+          }
+        },
+        "targetSdkVersion": "6.1.1(24)"
+      }
+    ]
+  },
+  "modules": [
+    {
+      "name": "entry",
+      "srcPath": "./entry",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    }
+  ]
+}
