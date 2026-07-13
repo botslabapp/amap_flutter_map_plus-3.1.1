@@ -1,0 +1,13 @@
+{
+  "name": "amap_flutter_map_plus",
+  "version": "3.1.1",
+  "description": "高德地图SDK Flutter插件 - HarmonyOS(ohos) 实现",
+  "main": "index.ets",
+  "author": "",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@ohos/flutter_ohos": "file:./har/flutter.har",
+    "@amap/amap_lbs_map3d": ">=2.2.1",
+    "@amap/amap_lbs_common": ">=1.2.0",
+  }
+}
