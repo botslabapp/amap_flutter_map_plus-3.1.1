@@ -46,10 +46,13 @@ class CameraPosition {
       return null;
     }
     return CameraPosition(
-      bearing: json['bearing'],
+      // 鸿蒙等平台原生侧可能回传 int 类型数值(如 zoom=10、bearing=0)，
+      // 直接赋给 double 字段会触发 "type 'int' is not a subtype of type 'double'"，
+      // 这里统一用 as num 再 toDouble() 做健壮转换，兼容 int 与 double。
+      bearing: (json['bearing'] as num).toDouble(),
       target: target,
-      tilt: json['tilt'],
-      zoom: json['zoom'],
+      tilt: (json['tilt'] as num).toDouble(),
+      zoom: (json['zoom'] as num).toDouble(),
     );
   }
 
