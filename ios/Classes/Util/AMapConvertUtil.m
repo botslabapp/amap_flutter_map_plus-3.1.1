@@ -101,7 +101,7 @@
 + (UIImage*)imageFromRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar iconData:(NSArray*)iconData {
     UIImage* image;
     if ([iconData.firstObject isEqualToString:@"defaultMarker"]) {
-        image = [UIImage imageNamed:[registrar lookupKeyForAsset:@"packages/amap_flutter_map/res/marker_default.png"]];//默认的图片资源
+        image = [UIImage imageNamed:[registrar lookupKeyForAsset:@"packages/amap_flutter_map_plus/res/marker_default.png"]];//默认的图片资源
         CGFloat screenScale = [[UIScreen mainScreen] scale];
         image = [self scaleImage:image param:[NSNumber numberWithFloat:screenScale]];
         //添加默认图片
