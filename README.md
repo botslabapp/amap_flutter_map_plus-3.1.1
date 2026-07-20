@@ -2,6 +2,16 @@
 
 基于[高德开放平台地图SDK](https://lbs.amap.com/api/)的flutter插件
 
+## 平台支持
+
+| 平台 | 状态 |
+| --- | --- |
+| Android | ✅ 支持 |
+| iOS | ✅ 支持 |
+| HarmonyOS (ohos) | ✅ 支持 |
+
+> HarmonyOS 平台实现参照社区方案 `csp_amap_flutter_map` 适配，配置与使用请参考 [HARMONYOS_SETUP.md](./HARMONYOS_SETUP.md)。
+
 ## Usage
 使用Flutter插件，请参考[在Flutter里使用Packages](https://flutter.cn/docs/development/packages-and-plugins/using-packages), 添加amap_flutter_map的引用
 

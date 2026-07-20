@@ -1,3 +1,10 @@
+## 【3.1.2】 - 2026-07-07.
+* 新增 HarmonyOS(ohos) 平台支持
+* 在 `buildView` 中新增 `OhosView` 分支，viewType 为 `com.amap.flutter.map`
+* 新增 `ohos/` 原生实现（ArkTS），参照 `csp_amap_flutter_map` 适配，MethodChannel 名为 `amap_flutter_map_${viewId}`
+* 支持 Marker / Polyline / Polygon、相机控制、地图事件、审图号、清缓存、渲染帧率、比例尺等功能
+* 配置说明详见 [HARMONYOS_SETUP.md](./HARMONYOS_SETUP.md)
+
 ## 【3.1.1】 - 2025-02-18.
 * 升级Flutter 3.0.0以上版本，解决hashValues报错
 * 解决 AAPT: error: resource android:attr/lStar not found报错

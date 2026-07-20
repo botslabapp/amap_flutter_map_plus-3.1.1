@@ -119,6 +119,16 @@ app.*.symbols
 !/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
 !/dev/ci/**/Gemfile.lock
 
+
+# ohos
+# Flutter 编译快照产物
+**/kernel_blob.bin
+**/vm_snapshot_*.bin
+**/isolate_snapshot_*.bin
+**/flutter_assets/*.bin
+# rawfile 下所有编译生成的flutter产物
+/entry/src/main/resources/rawfile/flutter_assets/
+
 # FVM Version Cache
 .fvm/
 .fvmrc

@@ -4,7 +4,7 @@ version: 3.1.1
 homepage: https://lbs.amap.com/
 
 environment:
-  sdk: ">=2.14.0 <4.0.0"
+  sdk: ">=2.15.0 <4.0.0"
   flutter: ">=1.20.0"
 
 dependencies:
@@ -15,9 +15,9 @@ dependencies:
   plugin_platform_interface: ^2.0.0
   stream_transform: ^2.0.0
 
-  amap_flutter_base_plus: ^3.1.0
-#  amap_flutter_base_plus:
-#    path: ../amap_flutter_base
+#  amap_flutter_base_plus: ^3.1.0
+  amap_flutter_base_plus:
+    path: ../amap_flutter_base_plus-3.1.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -44,6 +44,9 @@ flutter:
         package: com.amap.flutter.map
         pluginClass: AMapFlutterMapPlugin
       ios:
+        pluginClass: AMapFlutterMapPlugin
+      ohos:
+        package: com.amap.flutter.map
         pluginClass: AMapFlutterMapPlugin
 
   # To add assets to your plugin package, add an assets section, like this:
