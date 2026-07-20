@@ -17,7 +17,9 @@ dependencies:
 
 #  amap_flutter_base_plus: ^3.1.0
   amap_flutter_base_plus:
-    path: ../amap_flutter_base_plus-3.1.0
+    git:
+      url: https://github.com/botslabapp/amap_flutter_base_plus-3.1.0
+      ref: dev_ohos
 dev_dependencies:
   flutter_test:
     sdk: flutter
