@@ -155,7 +155,7 @@ class _MapState extends State<AMapWidget> {
   Widget build(BuildContext context) {
     AMapUtil.init(context);
     final Map<String, dynamic> creationParams = <String, dynamic>{
-      'privacyStatement': widget.privacyStatement?.toMap(),
+      'privacyStatement': (widget.privacyStatement ?? AMapInitializer._privacyStatement)?.toMap(),
       'apiKey': widget.apiKey?.toMap(),
       'initialCameraPosition': widget.initialCameraPosition.toMap(),
       'options': _mapOptions.toMap(),

@@ -23,6 +23,8 @@ import 'package:amap_flutter_map_example/widgets/demo_group.dart';
 import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
 
+import 'package:amap_flutter_map_plus/amap_flutter_map_plus.dart';
+import 'const_config.dart';
 import 'base_page.dart';
 
 final List<BasePage> _mapDemoPages = <BasePage>[
@@ -129,6 +131,8 @@ class DemoWidget extends State<AMapDemo> {
 }
 
 void main() {
+  // 全局设置高德合规声明，所有 AMapWidget 共享，避免每个页面重复传参
+  AMapInitializer.updatePrivacyAgree(ConstConfig.amapPrivacyStatement);
   // debugProfileBuildsEnabled = true;
   // debugProfilePaintsEnabled = true;
   // debugPaintLayerBordersEnabled = true;

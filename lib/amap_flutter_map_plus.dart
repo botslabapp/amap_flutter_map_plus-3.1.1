@@ -16,4 +16,5 @@ import 'package:flutter/services.dart';
 export 'package:amap_flutter_map_plus/src/types/types.dart';
 
 part 'src/amap_controller.dart';
+part 'src/amap_initializer.dart';
 part 'src/amap_widget.dart';
