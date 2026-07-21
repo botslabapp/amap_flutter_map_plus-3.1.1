@@ -14,6 +14,11 @@ import {
   Poi,
   Point
 } from '@amap/amap_lbs_map3d';
+import {
+  AMapPrivacyAgreeStatus,
+  AMapPrivacyInfoStatus,
+  AMapPrivacyShowStatus
+} from '@amap/amap_lbs_common';
 import { Any, FlutterComponent, FlutterInjector, FlutterManager, FlutterPage, FlutterView } from '@ohos/flutter_ohos';
 import { AMapOptionsSink } from '../core/AMapOptionsSink';
 import { image } from '@kit.ImageKit';
@@ -30,15 +35,15 @@ export class ConvertUtil {
   static apiKey: string
 
   static setPrivacyStatement(context: Context, object: Any) {
-    if (object === null || object === undefined) {
+    if (context === null || context === undefined || object === null || object === undefined) {
       return;
     }
     const map: Map<String, Object> = object as Map<String, Object>
     let hasContains: boolean = false
-    let hasShow:boolean = false
-    let hasAgree:boolean = false
+    let hasShow: boolean = false
+    let hasAgree: boolean = false
     if (map.has('hasContains')) {
-       hasContains = ConvertUtil.toBoolean(map.get("hasContains")!);
+      hasContains = ConvertUtil.toBoolean(map.get('hasContains')!);
     }
     if (map.has('hasShow')) {
       hasShow = ConvertUtil.toBoolean(map.get('hasShow')!)
@@ -47,7 +52,20 @@ export class ConvertUtil {
       hasAgree = ConvertUtil.toBoolean(map.get('hasAgree')!)
     }
 
+    const showStatus: AMapPrivacyShowStatus = hasShow
+      ? AMapPrivacyShowStatus.DidShow
+      : AMapPrivacyShowStatus.NotShow
+    const infoStatus: AMapPrivacyInfoStatus = hasContains
+      ? AMapPrivacyInfoStatus.DidContain
+      : AMapPrivacyInfoStatus.NotContain
+    const agreeStatus: AMapPrivacyAgreeStatus = hasAgree
+      ? AMapPrivacyAgreeStatus.DidAgree
+      : AMapPrivacyAgreeStatus.NotAgree
 
+    MapsInitializer.updatePrivacyShow(showStatus, infoStatus, context)
+    MapsInitializer.updatePrivacyAgree(agreeStatus, context)
+    LogUtil.i(ConvertUtil.CLASS_NAME,
+      `setPrivacyStatement hasContains:${hasContains}, hasShow:${hasShow}, hasAgree:${hasAgree}`)
   }
 
   static checkApiKey(object: Any): void {
